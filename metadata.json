@@ -1,0 +1,7 @@
+{
+  "name": "Ascii_Darshan",
+  "description": "Real-time camera to ASCII art converter with AI-powered scene analysis.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

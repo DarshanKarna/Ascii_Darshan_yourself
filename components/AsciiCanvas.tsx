@@ -19,6 +19,8 @@ export const AsciiCanvas: React.FC<AsciiCanvasProps> = ({ options, onCapture, up
   const animationRef = useRef<number>();
   const lastAsciiTextRef = useRef<string>("");
   const [error, setError] = useState<string | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragCounterRef = useRef(0);
 
   useEffect(() => {
     let stream: MediaStream | null = null;
@@ -340,12 +342,28 @@ export const AsciiCanvas: React.FC<AsciiCanvasProps> = ({ options, onCapture, up
 
 
 
+  const handleDragEnter = (e: React.DragEvent) => {
+    e.preventDefault();
+    dragCounterRef.current++;
+    setIsDragging(true);
+  };
+
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
   };
 
+  const handleDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    dragCounterRef.current--;
+    if (dragCounterRef.current === 0) {
+      setIsDragging(false);
+    }
+  };
+
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
+    dragCounterRef.current = 0;
+    setIsDragging(false);
     const file = e.dataTransfer.files?.[0];
     if (file && file.type.startsWith('image/')) {
       const reader = new FileReader();
@@ -460,8 +478,10 @@ export const AsciiCanvas: React.FC<AsciiCanvasProps> = ({ options, onCapture, up
 
   return (
     <div 
-      className="relative w-full h-full bg-black group"
+      className="relative w-full h-full bg-black"
+      onDragEnter={handleDragEnter}
       onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
       onDrop={handleDrop}
     >
         {error && (
@@ -479,14 +499,16 @@ export const AsciiCanvas: React.FC<AsciiCanvasProps> = ({ options, onCapture, up
         <canvas ref={hiddenCanvasRef} className="hidden" />
         <canvas ref={canvasRef} className="block w-full h-full" />
         
-        {/* Drag and Drop Hover overlay */}
-        <div className="absolute inset-0 bg-green-500/10 border-2 border-dashed border-green-500/40 m-4 pointer-events-none rounded-lg opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300 z-30">
+        {/* Drag and Drop overlay — only visible during file drag */}
+        {isDragging && (
+        <div className="absolute inset-0 bg-green-500/10 border-2 border-dashed border-green-500/40 m-4 pointer-events-none rounded-lg flex items-center justify-center z-30">
             <div className="text-center font-mono text-green-400 bg-black/90 p-6 border border-green-500/50 shadow-[0_0_15px_rgba(0,255,0,0.2)]">
                 <Upload className="w-8 h-8 mx-auto mb-2 animate-bounce" />
                 <p className="text-sm font-bold">DRAG & DROP IMAGE</p>
                 <p className="text-[10px] text-green-600 mt-1">RELEASE TO PROCESS ASCII</p>
             </div>
         </div>
+        )}
 
         {/* Floating Controls HUD Dock */}
         <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 flex items-center gap-4 p-3 bg-black/75 border border-green-500/30 rounded-full backdrop-blur-md shadow-[0_0_20px_rgba(0,255,0,0.15)] z-40 transition-all duration-300">

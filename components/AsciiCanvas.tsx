@@ -513,7 +513,7 @@ export const AsciiCanvas: React.FC<AsciiCanvasProps> = ({ options, onCapture, up
         )}
 
         {/* Floating Controls HUD Dock */}
-        <div className="absolute bottom-32 left-0 w-full flex justify-center pointer-events-none z-40">
+        <div className="fixed bottom-40 md:bottom-32 left-0 w-full flex justify-center pointer-events-none z-[60]">
             <div className="flex items-center gap-4 p-3 bg-black/75 border border-green-500/30 rounded-full backdrop-blur-md shadow-[0_0_20px_rgba(0,255,0,0.15)] pointer-events-auto">
                 {/* Copy ASCII Button */}
                 <button 

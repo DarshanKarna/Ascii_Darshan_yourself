@@ -513,31 +513,32 @@ export const AsciiCanvas: React.FC<AsciiCanvasProps> = ({ options, onCapture, up
         )}
 
         {/* Floating Controls HUD Dock */}
-        <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 flex items-center gap-4 p-3 bg-black/75 border border-green-500/30 rounded-full backdrop-blur-md shadow-[0_0_20px_rgba(0,255,0,0.15)] z-40 transition-all duration-300">
-            {/* Copy ASCII Button */}
-            <button 
-                onClick={handleCopyClick}
-                className="bg-black/40 hover:bg-green-900/60 text-green-400 border border-green-500/30 p-4 rounded-full transition-all active:scale-95 hover:scale-105"
-                title="Copy ASCII to Clipboard"
-            >
-                <Copy className="w-5 h-5" />
-            </button>
+        <div className="absolute bottom-32 left-0 w-full flex justify-center pointer-events-none z-40">
+            <div className="flex items-center gap-4 p-3 bg-black/75 border border-green-500/30 rounded-full backdrop-blur-md shadow-[0_0_20px_rgba(0,255,0,0.15)] pointer-events-auto">
+                {/* Copy ASCII Button */}
+                <button 
+                    onClick={handleCopyClick}
+                    className="bg-black/40 hover:bg-green-900/60 text-green-400 border border-green-500/30 p-4 rounded-full transition-all active:scale-95 hover:scale-105"
+                    title="Copy ASCII to Clipboard"
+                >
+                    <Copy className="w-5 h-5" />
+                </button>
 
-            {/* Scan & Analyze Button (Primary Core) */}
-            <button 
-                onClick={handleCaptureClick}
-                className="bg-green-500/20 hover:bg-green-500/40 text-green-400 border border-green-500 p-5 rounded-full transition-all active:scale-95 group relative hover:shadow-[0_0_25px_rgba(0,255,0,0.5)]"
-                title="Scan & Analyze Object"
-            >
-                <div className="absolute inset-0 rounded-full border border-green-500 opacity-50 animate-ping"></div>
-                <ScanEye className="w-7 h-7" />
-            </button>
+                {/* Scan & Analyze Button (Primary Core) */}
+                <button 
+                    onClick={handleCaptureClick}
+                    className="bg-green-500/20 hover:bg-green-500/40 text-green-400 border border-green-500 p-5 rounded-full transition-all active:scale-95 group relative hover:shadow-[0_0_25px_rgba(0,255,0,0.5)]"
+                    title="Scan & Analyze Object"
+                >
+                    <div className="absolute inset-0 rounded-full border border-green-500 opacity-50 animate-ping"></div>
+                    <ScanEye className="w-7 h-7" />
+                </button>
 
-            {/* Screenshot Button */}
-            <button 
-                onClick={handleScreenshotClick}
-                className="bg-black/40 hover:bg-green-900/60 text-green-400 border border-green-500/30 p-4 rounded-full transition-all active:scale-95 hover:scale-105"
-                title="Download PNG Snapshot"
+                {/* Screenshot Button */}
+                <button 
+                    onClick={handleScreenshotClick}
+                    className="bg-black/40 hover:bg-green-900/60 text-green-400 border border-green-500/30 p-4 rounded-full transition-all active:scale-95 hover:scale-105"
+                    title="Download PNG Snapshot"
             >
                 <Camera className="w-5 h-5" />
             </button>

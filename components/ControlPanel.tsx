@@ -40,7 +40,7 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({ options, setOptions,
 
   return (
     <div className="absolute bottom-0 w-full bg-black/80 border-t border-green-900/50 backdrop-blur-sm p-4 z-30 transition-all duration-300">
-      <div className="max-w-6xl mx-auto flex flex-wrap gap-6 justify-center items-center text-green-500 text-xs font-mono">
+      <div className="max-w-full mx-auto flex flex-nowrap gap-5 justify-center items-center text-green-500 text-xs font-mono overflow-x-auto">
         
         {/* Input Source (Upload/Camera Toggle) */}
         <div className="flex flex-col gap-2">

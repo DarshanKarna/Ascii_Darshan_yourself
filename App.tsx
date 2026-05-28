@@ -64,7 +64,7 @@ const App: React.FC = () => {
       </header>
 
       {/* Main Canvas Area */}
-      <main className="flex-grow relative z-10 flex">
+      <main className="flex-grow relative flex">
         <div className="flex-grow h-full relative">
           <AsciiCanvas 
             options={options} 

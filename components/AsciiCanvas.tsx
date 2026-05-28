@@ -389,12 +389,14 @@ export const AsciiCanvas: React.FC<AsciiCanvasProps> = ({ options, onCapture, up
       if (canvas) {
         const ctx = canvas.getContext('2d');
         if (ctx) {
+          ctx.save();
           ctx.fillStyle = 'rgba(0, 255, 65, 0.4)';
           ctx.fillRect(0, 0, canvas.width, canvas.height);
           ctx.font = "24px 'Share Tech Mono', monospace";
           ctx.fillStyle = "#ffffff";
           ctx.textAlign = "center";
           ctx.fillText("DATA COPIED TO CLIPBOARD", canvas.width / 2, canvas.height / 2);
+          ctx.restore();
         }
       }
     }

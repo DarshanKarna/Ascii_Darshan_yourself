@@ -551,6 +551,7 @@ export const AsciiCanvas: React.FC<AsciiCanvasProps> = ({ options, onCapture, up
             >
                 <FileCode className="w-5 h-5" />
             </button>
+            </div>
         </div>
     </div>
   );

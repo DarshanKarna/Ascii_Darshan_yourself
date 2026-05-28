@@ -5,7 +5,7 @@ import { AnalysisModal } from './components/AnalysisModal';
 import { DiagnosticsSidebar } from './components/DiagnosticsSidebar';
 import { AsciiOptions, AnalysisResult } from './types';
 import { analyzeImage } from './services/geminiService';
-import { Camera, Terminal, Zap, ScanEye } from 'lucide-react';
+import { Terminal } from 'lucide-react';
 import { playAnalysisStartSound, playAnalysisCompleteSound, speakAssessment } from './utils/soundEffects';
 
 const App: React.FC = () => {

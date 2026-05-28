@@ -336,7 +336,7 @@ export const AsciiCanvas: React.FC<AsciiCanvasProps> = ({ options, onCapture, up
             cancelAnimationFrame(animationRef.current);
         }
     };
-  }, [options]);
+  }, [options, uploadedImage]);
 
 
 

@@ -13,7 +13,7 @@ export const AnalysisModal: React.FC<AnalysisModalProps> = ({ isOpen, onClose, i
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" style={{ animation: 'modalFadeIn 0.2s ease-out forwards' }}>
       <div className="relative w-full max-w-lg bg-black border border-green-500 shadow-[0_0_30px_rgba(0,255,0,0.2)] overflow-hidden font-mono">
         
         {/* Scanner Line Animation */}
@@ -44,7 +44,7 @@ export const AnalysisModal: React.FC<AnalysisModalProps> = ({ isOpen, onClose, i
                     </div>
                 </div>
             ) : result ? (
-                <div className="space-y-6 animate-in slide-in-from-bottom-4 duration-500">
+                <div className="space-y-6" style={{ animation: 'modalSlideUp 0.5s ease-out forwards' }}>
                     
                     {/* Threat Level */}
                     <div className="border border-green-800 p-4 bg-green-900/10 flex items-center justify-between">
@@ -101,6 +101,14 @@ export const AnalysisModal: React.FC<AnalysisModalProps> = ({ isOpen, onClose, i
             0% { top: 0; }
             50% { top: 100%; }
             100% { top: 0; }
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes modalSlideUp {
+            from { opacity: 0; transform: translateY(1rem); }
+            to { opacity: 1; transform: translateY(0); }
         }
       `}</style>
     </div>

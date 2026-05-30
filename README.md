@@ -1,4 +1,4 @@
-# Ascii_Darshan 🎥🎨🤖
+# Ascii_Darshan
 
 A premium, highly interactive, retro-futuristic cyberpunk web application that converts live camera feeds or local image uploads into real-time stylized **ASCII art** with dynamic **Sobel edge detection overlays** and **AI-powered neural analysis** powered by Google Gemini.
 
@@ -6,23 +6,23 @@ Designed and developed by **Darshan Karna**.
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
-*   **🎥 Real-Time Webcam Processing**: Instantly transforms your webcam stream into beautiful monospace ASCII character configurations rendered at 60 FPS.
-*   **📐 Outline Edge Detection (Sobel Gradients)**: Employs a custom real-time gradient filter that outlines fine facial elements, glasses, hair, and outlines using structural characters (`|`, `-`, `/`, `\`) aligned dynamically to local pixel vectors.
-*   **🤖 AI Cybernetic Voice & Threat Assessment**: 
+*   **Real-Time Webcam Processing**: Instantly transforms your webcam stream into beautiful monospace ASCII character configurations rendered at 60 FPS.
+*   **Outline Edge Detection (Sobel Gradients)**: Employs a custom real-time gradient filter that outlines fine facial elements, glasses, hair, and outlines using structural characters (`|`, `-`, `/`, `\`) aligned dynamically to local pixel vectors.
+*   **AI Cybernetic Voice & Threat Assessment**: 
     *   Generates futuristic robotic assessments, cybersecurity tags, and threat classification levels from captured frames via the Google Gemini API.
     *   Speaks the assessments out loud in a low-pitched, digitized voice using the browser's native **SpeechSynthesis API**!
-*   **📁 Consolidated Settings & Input HUD**: 
+*   **Consolidated Settings & Input HUD**: 
     *   **Input Feed Control**: Drag and drop local images directly onto the window, or click `UPLOAD FILES` inside the panel to run real-time ASCII conversion on any photo. Switch back to live feeds with the `USE LIVE CAMERA` trigger.
     *   **Rich Controls**: Dynamically calibrate Font Size (Resolution), Gain (Brightness), Contrast, Palette Modes (CRT Green Matrix, Amber Retro, Grayscale, Full Color), and custom ASCII charset densities (Simple, Complex, Binary, Solid Blocks, and detailed 70-character grayscale ramps).
-*   **💾 Multi-Format Exports**: Save snapshots as raw `.png` images, copy the raw characters directly to your clipboard, or export fully stylized `.html` documents preserving precise layouts and glowing CSS highlights.
-*   **📺 CRT Monitor Aesthetics & Audio Synthesizer**: 
+*   **Multi-Format Exports**: Save snapshots as raw `.png` images, copy the raw characters directly to your clipboard, or export fully stylized `.html` documents preserving precise layouts and glowing CSS highlights.
+*   **CRT Monitor Aesthetics & Audio Synthesizer**: 
     *   Includes flickering glassmorphic scanlines, CRT screens curvature overlays, and custom sci-fi sound waves (ambient LFO dark drone hum, bleeps, major triad startup flourishes) synthesized procedurally via the **Web Audio API**.
 
 ---
 
-## 🛠️ Tech Stack & Architecture
+## Tech Stack & Architecture
 
 This application is built with a highly optimized, modern, no-build-step/esm module structure designed for light, instant execution:
 
@@ -33,7 +33,7 @@ This application is built with a highly optimized, modern, no-build-step/esm mod
 
 ---
 
-## 🚀 Running Locally
+## Running Locally
 
 ### Prerequisites
 *   [Node.js](https://nodejs.org/) installed on your machine.
@@ -70,8 +70,4 @@ This application is built with a highly optimized, modern, no-build-step/esm mod
     npm run preview
     ```
 
----
 
-## 📜 License
-
-Created and maintained by **Darshan Karna**. Licensed under the MIT License.
